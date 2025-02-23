@@ -12,8 +12,8 @@ USER $NB_USER
 WORKDIR $HOME
 
 # Install workshop deps
-RUN conda install mdtraj matplotlib numpy -y
-RUN conda install ipywidgets -c conda-forge -y
+RUN conda install matplotlib numpy ipywidgets -y
+RUN pip install mdtraj
 
 RUN git clone https://github.com/CCPBioSim/equilibration-workshop.git && \
     mv equilibration-workshop/* . && \
